@@ -5,5 +5,6 @@
 @ Author: Ohlupin Maxim
 
 """
+from .weather import WeatherInPlace
 
 from .main import app

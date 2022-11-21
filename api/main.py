@@ -6,12 +6,21 @@
 
 """
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 
 from . import WeatherInPlace
 from . import WhereAreYou
 from . import get_remote_addr
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*", ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.post("/weather")

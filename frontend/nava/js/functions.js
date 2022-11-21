@@ -38,7 +38,7 @@
         if (search_item != ""){
 
          $.ajax({
-            url: "/weather",
+            url: "http://localhost:8000/weather",
             type: "POST",
             crossDomain: true,
             data: JSON.stringify({"city": search_item}),

@@ -5,6 +5,7 @@
 @ Author: Ohlupin Maxim
 
 """
+from . import const
 from . import config
 from . import weather_response_parser
 

@@ -2757,7 +2757,7 @@ textarea:focus {
 
 /* -------- Intro Section -------- */
 .hero-box {
-  background-image: url(../img/hero-background.jpg);
+  background-image: url(../img/hero-background.gif);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

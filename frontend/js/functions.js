@@ -38,7 +38,7 @@
         if (search_item != ""){
 
          $.ajax({
-            url: "http://localhost:8000/weather",
+            url: "http://localhost:8000/api/weather",
             type: "POST",
             crossDomain: true,
             data: JSON.stringify({"city": search_item}),
@@ -48,6 +48,10 @@
               stat_items.each(function(idx) {
                 $(this).children(":first").text(response[key_list[idx]]);
               });
+
+              var gif_link = response["gif_link"];
+              $('.hero-box').css('background-image', 'url(' + gif_link + ')');
+
             },
             error: function (xhr, status) {
             }
@@ -62,7 +66,7 @@
            var key_list = ["city", "temperature", "wind"];
 
            $.ajax({
-                url: "/weather_me",
+                url: "/api/weather_me",
                 type: "GET",
                 crossDomain: true,
                 dataType: "json",
@@ -71,9 +75,10 @@
                   stat_items.each(function(idx) {
                     $(this).children(":first").text(response[key_list[idx]]);
                   });
+              var gif_link = response["gif_link"];
+              $('.hero-box').css('background-image', 'url(' + gif_link + ')');
                 },
                 error: function (xhr, status) {
-
                 }
         });
 

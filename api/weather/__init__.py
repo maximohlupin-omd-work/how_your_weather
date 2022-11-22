@@ -7,12 +7,14 @@
 """
 from . import const
 from . import config
-from . import weather_response_parser
+
+from .gismeteo import weather
+from .gismeteo import parse_response
 
 from .weather_in_place import WeatherInPlace
-from .where_are_you import WhereAreYou
 
 __all__ = [
+    "weather",
+    "parse_response",
     "WeatherInPlace",
-    "WhereAreYou"
 ]

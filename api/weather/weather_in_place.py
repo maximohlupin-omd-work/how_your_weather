@@ -36,10 +36,11 @@ class WeatherInPlace:
     async def _search_by(self):
         if self.city is not None:
             search_city = await weather.search.by_query(self.city)
+            city_id, name = search_city[0].id, search_city[0].name
         elif self.ip is not None:
             search_city = await weather.search.by_ip(self.ip)
+            city_id, name = search_city.id, search_city.name
         else:
             raise AttributeError("Undefined Search Point")
-        city_id, name = search_city[0].id, search_city[0].name
         weather_in_city = await weather.current.by_id(city_id)
         return weather_in_city, name

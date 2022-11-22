@@ -1,18 +1,24 @@
 ## Weather Web Application
 
-### API
+### Building
+
+- docker-compose up -d --build
+
+### STACK
+
+#### API
 
 - Python 3.10.8
 - FastAPI
 - aiohttp
 - asyncio
-- Pillow
+- GismeteoAPI
 
-### Client
+#### Client
 
 - JS
 - Jquery
 
-### CI\CD
+#### CI\CD
 
 - Docker

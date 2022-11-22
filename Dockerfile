@@ -5,12 +5,12 @@ RUN mkdir /app/api
 
 RUN python3 -m venv /app/venv
 
-COPY ../requirements.txt /app
-COPY ../.env /app
-COPY ../api /app/api
+COPY requirements.txt /app
+COPY settings.ini /app
+COPY /api /app/api
 
 WORKDIR /app
 
 RUN venv/bin/pip3 install -r /app/requirements.txt --no-cache-dir
 
-CMD ["venv/bin/uvicorn", "api:app","--host", "0.0.0.0", "--port", "8000", "--reload", "--proxy-headers"]
+CMD ["venv/bin/uvicorn", "api:app","--host", "0", "--port", "8000", "--proxy-headers"]

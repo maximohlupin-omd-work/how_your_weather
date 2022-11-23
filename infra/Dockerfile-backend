@@ -1,13 +1,13 @@
 FROM python:3.10.8-slim-buster
 
-RUN mkdir /app
-RUN mkdir /app/api
+RUN mkdir ../app
+RUN mkdir ../app/api
 
 RUN python3 -m venv /app/venv
 
 COPY requirements.txt /app
 COPY settings.ini /app
-COPY /api /app/api
+COPY api /app/api
 
 WORKDIR /app
 

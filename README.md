@@ -3,6 +3,7 @@
 ### Building
 
 - docker-compose up -d --build
+- Go to http://localhost
 
 ### STACK
 

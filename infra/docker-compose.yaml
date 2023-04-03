@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   api_weather:
-    image: omdwork/how_your_weather
     build:
       context: ../
       dockerfile: ./infra/Dockerfile-backend
@@ -10,7 +9,6 @@ services:
     ports:
       - "8000:8000"
   nginx:
-    image: omdwork/how_you_weather_static
     build:
       context: ../
       dockerfile: ./infra/Dockerfile-nginx

@@ -11,6 +11,6 @@ COPY api /app/api
 
 WORKDIR /app
 
-RUN venv/bin/pip3 install -r /app/requirements.txt --no-cache-dir
+RUN venv/bin/pip3 install -r /app/requirements.txt
 
 CMD ["venv/bin/uvicorn", "api:app","--host", "0", "--port", "8000", "--proxy-headers"]
